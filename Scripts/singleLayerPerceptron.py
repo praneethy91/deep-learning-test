@@ -1,7 +1,6 @@
 from numpy import exp, array, random, dot
 
 class NeuralNetwork():
-    x = 1
     def __init__(self):
         # Seed the random number generator, so it generates the same numbers
         # every time the program runs.
@@ -35,10 +34,6 @@ class NeuralNetwork():
             # and the predicted output).
             error = training_set_outputs - output
 
-            if self.x == 1:
-                print training_set_inputs.T
-                print error * self.__sigmoid_derivative(output)
-                self.x = 2
             # Multiply the error by the input and again by the gradient of the Sigmoid curve.
             # This means less confident weights are adjusted more.
             # This means inputs, which are zero, do not cause changes to the weights.
